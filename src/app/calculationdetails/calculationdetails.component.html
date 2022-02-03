@@ -1,0 +1,15 @@
+<section class="Calculate">
+    <img src="../../assets/banner3.jpg">
+<div class="Calculatecontent">
+
+Units USed in Watts :<input type="number" name="num1"class="col-md-10" [(ngModel)]="num1">
+<br/><br/>
+<button (click)="showBillH()" (click)="multiply()"><i class="fa fa-plus"></i>Calculate Bill amount to Household </button>
+<br/><br/>
+<button (click)="showBillI()" (click)="multiply()"><i class="fa fa-plus"></i>Calculate Bill amount to Industrial </button>
+<br/><br/>
+
+<h2>Total Bill Amount = {{num2}}</h2>
+
+</div>
+</section>

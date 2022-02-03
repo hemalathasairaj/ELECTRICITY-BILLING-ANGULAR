@@ -1,0 +1,21 @@
+
+.edit img
+{
+    width: 100%;
+    height: 600px;
+    object-position: center;
+    object-fit: cover;
+}
+.editcontent
+{
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+}
+.editcontent
+{
+    margin-left: 50px;
+    margin-right: 200px;
+}

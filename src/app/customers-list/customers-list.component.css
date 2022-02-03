@@ -1,0 +1,21 @@
+
+.list img
+{
+    width: 100%;
+    height:1000px;
+    object-position: center;
+    object-fit: cover;
+}
+.listcontent
+{
+    color:white;
+    position:absolute;
+    top: 70%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+}
+.listcontent
+{
+    margin-left: 50px;
+    margin-right: 200px;
+}

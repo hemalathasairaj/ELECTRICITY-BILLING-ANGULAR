@@ -1,0 +1,235 @@
+<section class="edit">
+    <img src="../../assets/banner3.jpg">
+    <div class="editcontent">
+      <div class="col align-self-center">
+       <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+          <h2>Edit DETAILS</h2>
+        <div class="form-group">
+          <label for="name" class="col-sm-2 col-form-label">Fullname</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="customerData.fullname"
+            name="txtname"
+            #Fullname="ngModel"
+            pattern="^[a-zA-Z\s]{1,15}$"
+            required
+          />
+        </div>
+        <span
+          *ngIf="Fullname.invalid && Fullname.touched"
+          class="error form-control-feedback"
+          ><span style="color:red">Enter your Name</span>
+          </span>
+      
+        <div class="form-group">
+          <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="customerData.phone"
+            name="txtphone"
+            #phone="ngModel"
+            required
+          />
+        </div>
+         <span
+          *ngIf="phone.invalid && phone.touched"
+          class="error form-control-feedback"
+          ><span style="color:red">Enter your phone number</span>
+          </span>
+  
+        <div class="form-group">
+          <label for="doorno" class="col-sm-2 col-form-label">doorno</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="1234 Main St"
+            [(ngModel)]="customerData.doorno"
+            name="txtDoorno"
+            #Address="ngModel"
+            required
+          >
+        </div>
+        <span
+          *ngIf="Address.invalid && Address.touched"
+          class="error form-control-feedback"
+          ><span style="color:red">Enter your House number</span>
+          </span>
+         
+        <div class="form-group">
+          <label for="inputStreet" class="col-sm-2 col-form-label">street</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Apartment, studio, or floor"
+            placeholder="Apartment, studio, or floor"
+            [(ngModel)]="customerData.street"
+            name="txtinputStreet"
+            #Address2="ngModel"
+            required
+          />
+        </div>
+        <span
+          *ngIf="Address2.invalid && Address2.touched"
+          class="error form-control-feedback"
+          ><span style="color:red">Enter your Address(street or land mark)</span>
+          </span>
+  
+        <div class="form-group">
+          <label for="city" class="col-sm-2 col-form-label">city</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="customerData.city"
+            name="txtcity"
+            #city="ngModel"
+            required
+          />
+        </div>
+        <span
+          *ngIf="city.invalid && city.touched"
+          class="error form-control-feedback"
+          ><span style="color:red">Enter your city </span>
+          </span>
+  
+      <div class="col-md-12">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" 
+          class="form-select" 
+          [(ngModel)]="customerData.state"
+          name="txtinputState"
+          #state="ngModel"  
+          required>
+          <option selected>Choose</option>
+          <option>Delhi</option>
+          <option>Telangana</option>
+          <option>Andhra</option>
+          <option>Tamilnadu</option>
+          <option>Kerala</option>
+          <option>Maharastra</option>
+          <option>Karnataka</option>
+        </select>
+      </div>
+       <span 
+          *ngIf="state.invalid && state.touched"
+          class="error form-control-feedback"
+          >
+          <span style="color:red">Select your state </span>
+       </span>
+  
+      <div class="form-group">
+        Connection
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            [(ngModel)]="customerData.connection"
+            value="Household"
+            #connection="ngModel"
+            id="flexRadioDefault1"
+            required
+          />
+          <label class="form-check-label" for="flexRadioDefault1"> Household </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            [(ngModel)]="customerData.connection"
+            value="Industrial"
+            #connection="ngModel"
+            id="flexRadioDefault2"
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Industrial
+          </label>
+        </div>
+      </div>
+  
+        <div class="form-group">
+          <label for="bill" class="col-sm-2 col-form-label">BillNumber</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="customerData.billnumber"
+            name="txtbill"
+            #billnumber="ngModel"
+            required
+          />
+        </div>
+         <span
+          *ngIf="billnumber.invalid && billnumber.touched"
+          class="error form-control-feedback"
+          ><span style="color:red">Enter your bill number </span>
+          </span>
+  
+      <div class="form-group">
+        <label for="txtemail" class="col-sm-2 col-form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          [(ngModel)]="customerData.Email"
+          name="txtemail"
+          #txtemail="ngModel"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,3}$"
+          required
+        />
+      </div>
+      <span
+        *ngIf="txtemail.invalid && txtemail.touched"
+        class="error form-control-feedback"
+        ><span style="color:red">E-mail is required</span>
+      </span>
+      
+      <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 col-form-label"
+          >Password</label
+        >
+        <input
+          type="password"
+          class="form-control"
+          [(ngModel)]="customerData. Password"
+          name="inputPassword"
+          #inputPassword="ngModel"
+          required
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$"
+          minlength="8"
+        />
+      </div>
+      <div class="error form-control-feedback">
+        <span
+          *ngIf="
+            inputPassword.errors &&
+            (inputPassword.touched || inputPassword.dirty)
+          "
+          ><span style="color:red">Password is required</span>
+          </span>
+        <span *ngIf="inputPassword.errors"
+          ><span style="color:aqua">Password must be 8 characters long</span>
+        </span> 
+      </div>
+
+      <div class="form-group">
+       <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+        <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
+        <div class="invalid-feedback">Example invalid feedback text</div>
+       </div>
+      </div>
+     <div class="form-group">
+      <button
+        (click)="updatecustomer()"
+        [disabled]="!myForm.form.valid"
+        type="button"
+        class="btn btn-primary"
+      >
+       Update
+      </button>
+    </div>
+    </form>
+    </div>
+  </div>
+  </section>

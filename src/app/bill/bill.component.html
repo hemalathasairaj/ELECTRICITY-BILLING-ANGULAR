@@ -1,0 +1,83 @@
+<section class="register">
+    <img src="../../assets/banner3.jpg">
+    <div class="registercontent">
+        <h1>BILL DETAILS</h1>
+      <div class="col align-self-center">
+       <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <div class="form-group">
+            Connection
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                [(ngModel)]="billform.connection"
+                value="Household"
+                #connection="ngModel"
+                id="flexRadioDefault1"
+                required
+              />
+              <label class="form-check-label" for="flexRadioDefault1"> Household </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                [(ngModel)]="billform.connection"
+                value="Industrial"
+                #connection="ngModel"
+                id="flexRadioDefault2"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Industrial
+              </label>
+            </div>
+          </div>
+              <div class="form-group">
+                <label for="readingintake" class="col-sm-2 col-form-label"></label>
+                <input
+                  type="date"
+                  class="form-control"
+                  placeholder="Readingintake"
+                  [(ngModel)]="billform.readingintake"
+                  name="datereading"
+                  #billnumber="ngModel"
+                  required
+                />
+              </div>
+              
+              <div class="form-group">
+                <label for="unitsused" class="col-sm-2 col-form-label"></label>
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="units used"
+                  [(ngModel)]="billform.unitsused"
+                  name="txtunitsused"
+                  #billnumber="ngModel"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <div class="form-check mb-3">
+                 <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+                 <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
+                 <div class="invalid-feedback">Example invalid feedback text</div>
+                </div>
+               </div>
+              <div class="form-group">
+               <button
+                 (click)="addbill()"
+                 [disabled]="!myForm.form.valid"
+                 type="button"
+                 class="btn btn-primary"
+               >
+                ADD
+               </button>
+             </div>
+       </form>
+      </div>
+    </div>
+</section>
+

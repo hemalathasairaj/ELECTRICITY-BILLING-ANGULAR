@@ -1,0 +1,62 @@
+export class CusData{
+    private fullname:String;
+	private phone:number;
+	private address:String;
+	private address2:String;
+	private city:String;
+	private state:String;
+	private pincode:number;
+	private connection:String;
+	private billnumber:number;
+	private email:String;
+	private password:String;
+
+    Customer(fullname:String, phone:number,address: String ,address2: String, city: String, state:String,
+         pincode:number, connection:String, billnumber:number, email: String, password:String) {
+    this.fullname = fullname;
+    this.phone = phone;
+    this.address = address;
+    this.address2 = address2;
+    this.city = city;
+    this.state = state;
+    this.pincode = pincode;
+    this.connection = connection;
+    this.billnumber = billnumber;
+    this.email = email;
+    this.password = password;
+}
+ getFullname():String {
+    return this.fullname;
+}
+getPhone():number {
+    return this.phone;
+}
+getAddress():String {
+    return this.address;
+}
+getAddress2():String {
+    return this.address2;
+}
+ getCity() :String{
+    return this.city;
+}
+getState() :String{
+    return this.state;
+}
+getPincode():number {
+    return this.pincode;
+}
+ getConnection():String {
+    return this.connection;
+}
+getBillnumber():number{
+    return this.billnumber;
+}
+ getEmail() :String{
+    return this.email;
+}
+ getPassword():String {
+    return this.password;
+}
+
+}

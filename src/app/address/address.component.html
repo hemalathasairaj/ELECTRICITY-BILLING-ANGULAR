@@ -1,0 +1,107 @@
+<section class="register">
+    <img src="../../assets/banner3.jpg">
+    <div class="registercontent">
+      <h1>ADDRESS Form</h1>
+      <div class="col align-self-center">
+       <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <div class="form-group">
+            <label for="inputStreet" class="col-sm-2 col-form-label"></label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Street"
+              [(ngModel)]="costumerlogin.street"
+              name="txtinputStreet"
+              #Address2="ngModel"
+              required
+            />
+          </div>
+          <span
+            *ngIf="Address2.invalid && Address2.touched"
+            class="error form-control-feedback"
+            ><span style="color:red">Enter your Address(street or land mark)</span>
+            </span>
+        
+          <div class="form-group">
+            <label for="city" class="col-sm-2 col-form-label"></label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="City"
+              [(ngModel)]="costumerlogin.city"
+              name="txtcity"
+              #city="ngModel"
+              required
+            />
+          </div>
+          <span
+            *ngIf="city.invalid && city.touched"
+            class="error form-control-feedback"
+            ><span style="color:red">Enter your city </span>
+            </span>
+        
+        <div class="col-md-12">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" 
+            class="form-select" 
+            [(ngModel)]="costumerlogin.state"
+            name="txtinputState"
+            #state="ngModel"  
+            required>
+            <option>Delhi</option>
+            <option>Telangana</option>
+            <option>Andhra</option>
+            <option>Tamilnadu</option>
+            <option>Kerala</option>
+            <option>Maharastra</option>
+            <option>Karnataka</option>
+          </select>
+        </div>
+         <span 
+            *ngIf="state.invalid && state.touched"
+            class="error form-control-feedback"
+            >
+            <span style="color:red">Select your state </span>
+         </span>
+         <div class="form-group">
+          <label for="phone" class="col-sm-2 col-form-label"></label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="pincode"
+            [(ngModel)]="costumerlogin.pincode"
+            name="txtpincode"
+            #phone="ngModel"
+            required
+          />
+        </div>
+         <span
+          *ngIf="phone.invalid && phone.touched"
+          class="error form-control-feedback"
+          ><span style="color:red">Enter your pincode</span>
+      </span>
+
+         <div class="form-group">
+            <div class="form-check mb-3">
+             <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+             <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
+             <div class="invalid-feedback">Example invalid feedback text</div>
+            </div>
+           </div>
+          <div class="form-group">
+           <button
+             (click)="addaddress()"
+             [disabled]="!myForm.form.valid"
+             type="button"
+             routerLink="/bill"
+             class="btn btn-primary"
+           >
+            Register Address
+           </button>
+         </div>
+         </form>
+         </div>
+    </div>
+</section>
+        
+         

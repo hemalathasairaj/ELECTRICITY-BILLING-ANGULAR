@@ -1,0 +1,16 @@
+<section class="bill">
+<img src="../../assets/banner3.jpg">
+<div class="billcontent">
+  <h2>Select the connection type:</h2>
+<ul class="list-group">
+    <li
+      (click)="onClick(service)"
+      class="list-group-item list-group-item-action"
+      *ngFor="let service of services"
+    >
+      <span class="badge bg-info">{{ service.id }} </span> {{ service.name }}
+    </li>
+  </ul>
+</div>
+</section>
+<router-outlet></router-outlet>
