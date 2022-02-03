@@ -1,0 +1,21 @@
+
+.register img
+{
+    width: 100%;
+    height: 900px;
+    object-position: center;
+    object-fit: cover;
+}
+.registercontent
+{
+    color:white;
+    position: absolute;
+    top: 70%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+}
+.registercontent
+{
+    margin-left: 50px;
+    margin-right: 200px;
+}
