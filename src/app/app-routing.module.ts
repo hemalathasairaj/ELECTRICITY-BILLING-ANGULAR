@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:'addressregisteration',component:AddressComponent},
   {path:'bill',component:BillComponent},
   {path:'updateCus/:cid',component:CustomerEditComponent},
-  {path:'updateBill/:billnumber',component:BillEditComponent},
+  {path:'updateCus/:billno',component:BillEditComponent},
   {path:'customer_list',component:CustomersListComponent},
   {path:'login',component:LoginComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},

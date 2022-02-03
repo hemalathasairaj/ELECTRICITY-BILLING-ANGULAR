@@ -25,7 +25,6 @@ export class AddressComponent implements OnInit {
   {
    this.submitted = true;
     alert('Customers address are validated successfully!');
-  
   }
   
   addaddress() 

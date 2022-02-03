@@ -10,7 +10,7 @@ import { BillserviceService } from '../billservice.service';
 export class BillEditComponent implements OnInit {
   public billData:any={};
   submitted=false;
-  public billnumber: any = this.aroute.snapshot.params['billnumber'];
+  public billnumber: any = this.aroute.snapshot.params['billno'];
    public selectedId: any;
  
    constructor( private service: BillserviceService,
@@ -30,7 +30,7 @@ export class BillEditComponent implements OnInit {
      console.log(' Customer Bill Data ----->' + this.billData);
      this.service
        .updateBill(this.billData)
-       .subscribe((data: {}) => this.router.navigate(['/bill_list']));
+       .subscribe((data: {}) => this.router.navigate(['/customer_list']));
    }
 
 }

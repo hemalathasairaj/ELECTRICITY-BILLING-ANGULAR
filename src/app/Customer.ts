@@ -1,6 +1,3 @@
-import { Address } from "./Address"
-import { Bill } from "./Billfile";
-
 export interface Customer
 {
     cid: number,

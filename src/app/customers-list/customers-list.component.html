@@ -67,15 +67,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let b of bills">
-        <a routerLink="/updateBill/{{ b.billnumber }}" routerLinkActive="active">
+      <tr *ngFor="let bill of bill">
+        <a routerLink="updateCus/{{bill.billno}}" routerLinkActive="active">
         <th scope="row">*</th>
       </a>
-        <td>{{b.billno }}</td>
-        <td>{{b.connection }}</td>
-        <td>{{b.readingdate }}</td>
-        <td>{{ b.unitsused }}</td>
-        <td>{{ b.amount }}</td>
+        <td>{{ bill.billno }}</td>
+        <td>{{ bill.connection }}</td>
+        <td>{{ bill.readingdate }}</td>
+        <td>{{ bill.unitsused }}</td>
+        <td>{{ bill.amount }}</td>
       </tr>
     </tbody>
   </table>

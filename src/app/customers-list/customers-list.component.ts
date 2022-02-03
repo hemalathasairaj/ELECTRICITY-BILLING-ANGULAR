@@ -15,7 +15,7 @@ export class CustomersListComponent implements OnInit {
 
   public customers = [] as any;
   public address=[] as any;
-  public bills = [] as any;
+  public bill = [] as any;
   constructor(private cservice: CusserviceService,
               private aservice:AddserviceService,
               private bservice: BillserviceService,
@@ -30,7 +30,7 @@ export class CustomersListComponent implements OnInit {
     .subscribe((data)=>(this.address=data));
     this.bservice
     .getBillsFromservice()
-    .subscribe((data)=>(this.bills = data));
+    .subscribe((data)=>(this.bill = data));
   }
   onDelete(cus: Customer) {
     this.selectedId = cus.cid;

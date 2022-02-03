@@ -7,10 +7,6 @@ import { Bill } from './Billfile';
   providedIn: 'root'
 })
 export class BillserviceService {
-  [x: string]: any;
-  BillCustomer(billform: any) {
-    throw new Error('Method not implemented.');
-  }
   private url : string = 'http://localhost:8087/sprmvcebmsproj/Bill';
   httpOptions = {
     headers:new HttpHeaders({
@@ -23,23 +19,23 @@ export class BillserviceService {
     .get<Bill[]>(this.url+'/allcus')
    .pipe(retry(1),catchError(this.handleError));
    }
-   getBill(billnumber: any): Observable<Bill[]> {
+   getBill(billno: any): Observable<Bill[]> {
      return this.http
-       .get<Bill[]>(this.url + '/getCus/' + billnumber,
+       .get<Bill[]>(this.url + '/getCus/' + billno,
        this.httpOptions
        )
        .pipe(retry(1), catchError(this.handleError));
    }
-  generateBill(bill:any):Observable<Bill>{
-     console.log(bill);
-     return this.http
-       .post<Bill>(
-         this.url + '/createBill',
-        JSON.stringify(bill),
-         this.httpOptions
-       )
-       .pipe(retry(1), catchError(this.handleError));
-   }
+   createBill(bill:any):Observable<Bill>{
+    console.log(bill);
+    return this.http
+      .post<Bill>(
+        this.url + '/createBill',
+       JSON.stringify(bill),
+        this.httpOptions
+      )
+      .pipe(retry(1), catchError(this.handleError));
+  }
    updateBill(bill: any): Observable<Bill> {
      console.log(bill);
      return this.http
@@ -50,10 +46,10 @@ export class BillserviceService {
        )
        .pipe(retry(1), catchError(this.handleError));
    }
-   deleteBill(billnumber: number): Observable<Bill> {
-     console.log(billnumber + ' from deleteBill()');
+   deleteBill(billno: number): Observable<Bill> {
+     console.log(billno + ' from deleteBill()');
     return this.http
-       .delete<Bill>(this.url + '/deleteCus/' + billnumber,
+       .delete<Bill>(this.url + '/deleteCus/' + billno,
        this.httpOptions
        )
        .pipe(retry(1), catchError(this.handleError));

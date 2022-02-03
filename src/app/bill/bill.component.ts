@@ -10,7 +10,7 @@ import { CusserviceService } from '../cusservice.service';
 })
 export class BillComponent implements OnInit {
 @Input()
-billform:any={
+costumerlogin:any={
     readingintake :'',
     duedate :'',
     connection:'',
@@ -27,11 +27,10 @@ billform:any={
   onSubmit(){
     this.submitted = true;
     alert('Bill Details validated successfully!');
-  
  }
  addbill(){
-  console.log('from bill comp.ts'+this.billform)
-  this.service.generateBill(this.billform).subscribe((data:{})=>this.router.navigate(['customer_list']));
+  console.log('from bill comp.ts'+this.costumerlogin)
+  this.service.createBill(this.costumerlogin).subscribe((data:{})=>this.router.navigate(['/customer_list']));
     
  }
  
